@@ -1,3 +1,42 @@
+// --1
+const moreButton = document.getElementById("moreButton");
+const flyoutMenu = document.getElementById("flyoutMenu");
+
+moreButton.addEventListener("mouseenter", () => {
+  flyoutMenu.classList.remove("hidden");
+});
+
+moreButton.addEventListener("mouseleave", (e) => {
+  setTimeout(() => {
+    if (!flyoutMenu.matches(":hover")) {
+      flyoutMenu.classList.add("hidden");
+    }
+  }, 150);
+});
+
+flyoutMenu.addEventListener("mouseleave", () => {
+  flyoutMenu.classList.add("hidden");
+});
+
+// --2
+const menu = document.getElementById("menu");
+const closeMenu = document.getElementById("close-menu");
+const openMenu = document.getElementById("open-menu");
+
+openMenu.addEventListener("click", () => {
+  menu.classList.remove("max-md:-left-full");
+  menu.classList.add("max-md:left-0");
+});
+
+function closeNavbar() {
+  menu.classList.remove("max-md:left-0");
+  menu.classList.add("max-md:-left-full");
+}
+
+closeMenu.addEventListener("click", () => {
+  closeNavbar();
+});
+
 // --- script  scrol ---
 const scrollContainer = document.getElementById("cardScroll");
 
@@ -139,4 +178,29 @@ document.addEventListener("DOMContentLoaded", () => {
     infoTimezone.textContent = "-";
     infoBookBtn.style.display = "none";
   }
+});
+
+const testimonials = document.querySelectorAll(".testimonial");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+const indicator = document.getElementById("pageIndicator");
+let current = 0;
+
+function showTestimonial(index) {
+  testimonials.forEach((t, i) => {
+    t.classList.toggle("hidden", i !== index);
+  });
+  indicator.textContent = `${String(index + 1).padStart(2, "0")}/${String(
+    testimonials.length
+  ).padStart(2, "0")}`;
+}
+
+nextBtn.addEventListener("click", () => {
+  current = (current + 1) % testimonials.length;
+  showTestimonial(current);
+});
+
+prevBtn.addEventListener("click", () => {
+  current = (current - 1 + testimonials.length) % testimonials.length;
+  showTestimonial(current);
 });

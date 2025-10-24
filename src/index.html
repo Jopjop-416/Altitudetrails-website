@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Map Finder</title>
+    <title>AltitudeTrails</title>
 
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
@@ -34,6 +34,7 @@
       crossorigin=""
     ></script>
 
+    <!-- style -->
     <style>
       * {
         font-family: "Poppins", sans-serif;
@@ -41,6 +42,14 @@
 
       #map {
         height: 450px;
+      }
+    </style>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+      * {
+        font-family: "Poppins", sans-serif;
       }
     </style>
   </head>
@@ -92,36 +101,6 @@
           </ul>
         </div>
       </div>
-
-      <!-- Script interaksi Flyout -->
-      <script>
-        const moreButton = document.getElementById("moreButton");
-        const flyoutMenu = document.getElementById("flyoutMenu");
-
-        moreButton.addEventListener("mouseenter", () => {
-          flyoutMenu.classList.remove("hidden");
-        });
-
-        moreButton.addEventListener("mouseleave", (e) => {
-          setTimeout(() => {
-            if (!flyoutMenu.matches(":hover")) {
-              flyoutMenu.classList.add("hidden");
-            }
-          }, 150);
-        });
-
-        flyoutMenu.addEventListener("mouseleave", () => {
-          flyoutMenu.classList.add("hidden");
-        });
-      </script>
-
-      <style>
-        @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
-        * {
-          font-family: "Poppins", sans-serif;
-        }
-      </style>
 
       <!-- ===== SECTION 2: navbar ===== -->
       <section
@@ -234,32 +213,11 @@
           </div>
         </div>
       </section>
-
-      <script>
-        const menu = document.getElementById("menu");
-        const closeMenu = document.getElementById("close-menu");
-        const openMenu = document.getElementById("open-menu");
-
-        openMenu.addEventListener("click", () => {
-          menu.classList.remove("max-md:-left-full");
-          menu.classList.add("max-md:left-0");
-        });
-
-        function closeNavbar() {
-          menu.classList.remove("max-md:left-0");
-          menu.classList.add("max-md:-left-full");
-        }
-
-        closeMenu.addEventListener("click", () => {
-          closeNavbar();
-        });
-      </script>
     </section>
 
     <!-- ===== SECTION 3: kutipan ===== -->
     <section class="bg-black text-white py-24 px-6 md:px-24 text-left">
       <div class="max-w-4xl mx-auto">
-        <!-- Icon tanda kutip -->
         <div class="mb-6">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -505,9 +463,6 @@
         </svg>
       </div>
     </section>
-
-    <!-- ===== SECTION g tau: tambahan ===== -->
-    <section></section>
 
     <!-- ===== SECTION 7: Hiking Kits ===== -->
     <section class="bg-white pt-8 pb-0 px-6 md:px-16 lg:px-24 xl:px-32 mb-0">
@@ -1383,53 +1338,74 @@
       </div>
     </section>
 
-    <!-- ===== SECTION: Testimonial (Dark Theme) ===== -->
+    <!-- ===== SECTION: Testimonial ===== -->
     <section
       class="bg-black text-white py-24 px-6 md:px-16 lg:px-24 xl:px-32 text-center"
     >
       <div class="max-w-4xl mx-auto">
-        <!-- Label -->
-        <p class="text-sm uppercase tracking-wider text-gray-400 mb-3">
-          Testimonial
-        </p>
+        <a href="https://prebuiltui.com" class="mb-2 inline-block">
+          <img
+            src="image/ts.png"
+            alt="Logo"
+            class="h-6 w-auto object-contain"
+          />
+        </a>
 
-        <!-- Judul -->
         <h2 class="text-3xl md:text-5xl font-normal mb-6 text-white">
           What Our Community Says
         </h2>
 
-        <!-- Deskripsi -->
         <p class="text-white leading-6 max-w-4xl text-sm mb-8">
           See what our community has to say about their experiences with
-          Altitude trails. From unforgettable hikes to top-quality gear and expert
-          guidance, these testimonials showcase the adventures and memories
-          created with us.
+          Altitude trails. From unforgettable hikes to top-quality gear and
+          expert guidance, these testimonials showcase the adventures and
+          memories created with us.
         </p>
 
-        <!-- Kartu Testimonial -->
-        <div class="bg-white rounded-2xl p-10 md:p-12 text-left shadow-xl">
-          <p class="text-2xl font-normal leading-snug mb-10 text-black">
-            "Thrilliz made my first hiking experience unforgettable! The guides
+        <div
+          class="testimonial bg-white rounded-2xl p-10 md:p-12 text-left shadow-xl"
+        >
+          <p class="text-2xl font-medium leading-snug mb-10 text-black">
+            "Atitude made my first hiking experience unforgettable! The guides
             were knowledgeable and the scenery was breathtaking."
           </p>
-
           <div class="flex items-center space-x-4">
             <img
               src="image/ava.jpg"
-              alt="Emma Louise"
-              class="w-12 h-12 rounded-full object-cover border border-gray-700"
+              alt="Zxuuu"
+              class="w-12 h-12 rounded-full object-cover border border-black"
             />
             <div>
               <h4 class="font-normal text-black">Zxuuu.</h4>
-              <p class="text-sm text-slate-800">Expert Hiker</p>
+              <p class="text-xs text-slate-800 mt-0.5">Expert Hiker</p>
             </div>
           </div>
         </div>
 
-        <!-- Navigasi -->
+        <div
+          class="testimonial hidden bg-white rounded-2xl p-10 md:p-12 text-left shadow-xl"
+        >
+          <p class="text-2xl font-medium leading-snug mb-10 text-black">
+            "Amazing service and stunning trails! I met incredible people and
+            learned so much from the guides."
+          </p>
+          <div class="flex items-center space-x-4">
+            <img
+              src="image/ava2.jpg"
+              alt="Alyssa"
+              class="w-12 h-12 rounded-full object-cover border border-black"
+            />
+            <div>
+              <h4 class="font-normal text-black">Alyssa.</h4>
+              <p class="text-xs text-slate-800 mt-0.5">Mountain Explorer</p>
+            </div>
+          </div>
+        </div>
+
         <div class="flex items-center justify-center mt-10 space-x-6">
           <button
-            class="w-10 h-10 flex items-center justify-center rounded-full  transition"
+            id="prevBtn"
+            class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-800 transition"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -1447,10 +1423,11 @@
             </svg>
           </button>
 
-          <span class="text-sm text-gray-400">01/05</span>
+          <span id="pageIndicator" class="text-sm text-[#A6A6A6]">01/02</span>
 
           <button
-            class="w-10 h-10 flex items-center justify-center rounded-full transition"
+            id="nextBtn"
+            class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-800 transition"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -1471,10 +1448,28 @@
       </div>
     </section>
 
+    <!-- ===== gambar ===== -->
+    <section
+      class="relative flex items-center justify-center h-[60vh] bg-cover bg-center bg-no-repeat"
+      style="background-image: url('image/bg7.png')"
+    >
+      <div class="absolute inset-0 bg-black/40"></div>
+
+      <div class="relative z-10 px-8 md:px-20 text-white text-center">
+        <h1 class="text-5xl md:text-6xl font-medium leading-tight mb-4">
+          So ready to start your adventure
+        </h1>
+        <p class="text-lg md:text-xl mb-8">
+          Find your trail and secure your spot with our expert guides using the
+          map below.
+        </p>
+      </div>
+    </section>
+
     <!-- ===== SECTION 10: Pencarian ===== -->
     <section class="bg-white text-black py-24 px-10 md:px-24">
       <div class="max-w-6xl mx-auto">
-        <h2 class="text-3xl md:text-5xl font-semibold mb-10 text-center">
+        <h2 class="text-3xl md:text-5xl font-semibold mb-5 text-center">
           Find Your Starting Point
         </h2>
         <p class="text-gray-600 text-center mb-12">
@@ -1482,12 +1477,10 @@
           meeting point for your booking.
         </p>
 
-        <!-- ✅ Tambahan wrapper agar search bar berada di tengah -->
         <div class="flex justify-center mb-10">
           <div
             class="flex items-center gap-2 pl-4 h-[46px] max-w-md w-full bg-white border border-gray-500/30 rounded-full overflow-hidden"
           >
-            <!-- Icon Search -->
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -1501,7 +1494,6 @@
               />
             </svg>
 
-            <!-- Input -->
             <input
               id="placeInput"
               type="text"
@@ -1509,7 +1501,6 @@
               class="flex-1 h-full px-4 bg-white text-sm text-gray-500 outline-none rounded-lg max-w-md mx-auto"
             />
 
-            <!-- Tombol -->
             <button
               id="fetchBtn"
               type="submit"
@@ -1519,7 +1510,6 @@
             </button>
           </div>
         </div>
-        <!-- ✅ Wrapper selesai -->
 
         <p id="statusMsg" class="text-center text-gray-500 mb-8"></p>
 
@@ -1527,11 +1517,11 @@
           class="grid grid-cols-1 md:grid-cols-3 gap-6 bg-white shadow-[0px_0px_7px_0px_rgba(8,_11,_14,_0.06)] rounded-lg overflow-hidden border border-gray-200"
         >
           <div class="md:col-span-2">
-            <div id="map" class="w-full h-full min-h-[450px]"></div>
+            <div id="map" class="w-full h-[200px]"></div>
           </div>
 
           <div class="md:col-span-1 p-6 bg-white">
-            <h3 class="text-2xl font-bold mb-4" id="info-label">
+            <h3 class="text-2xl font-semibold mb-4" id="info-label">
               Detail Lokasi
             </h3>
 
@@ -1583,6 +1573,261 @@
         </div>
       </div>
     </section>
+
+    <!-- Footer-->
+    <footer class="bg-black text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="py-10 flex flex-col lg:flex-row justify-between lg:items-center gap-6 border-b border-white"
+        >
+          <div class="lg:w-1/2 mt-10">
+            <h2 class="text-3xl font-normal">Stay on the Trail!</h2>
+            <p class="text-white mt-2 text-sm">
+              Subscribe to our newsletter for the latest hiking tips, trail
+              updates, and exclusive offers. Get inspired for your next
+              adventure with us!
+            </p>
+          </div>
+          <div class="lg:w-1/2 mt-2">
+            <form class="flex flex-col mt-10 sm:flex-row gap-3">
+              <input
+                type="email"
+                placeholder="Type your email"
+                class="w-full sm:flex-grow px-5 py-3 text-xs rounded-full text-gray-900 placeholder-gray-500 focus:outline-none"
+              />
+              <button
+                type="submit"
+                class="bg-white text-black font-normal px-6 text-xs py-3 rounded-full hover:bg-gray-200 transition-colors"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="py-10">
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-10"
+          >
+            <div>
+              <h3 class="text-xl font-normal text-white">Download our app</h3>
+              <p class="text-white mt-3 text-justify text-xs">
+                Adventure on the Go! Stay connected with nature, track your
+                hiking progress, and discover new trails with the Thrillz app.
+                Your next adventure is just a tap away!
+              </p>
+            </div>
+
+            <div>
+              <h3 class="text-lg font-normal text-white text-right">
+                Our Product
+              </h3>
+              <ul class="mt-4 space-y-3 text-right">
+                <li>
+                  <a
+                    href="#"
+                    class="text-white font-normal hover:text-white text-sm transition-colors"
+                    >Best Spot</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-white font-normal hover:text-white text-sm transition-colors"
+                    >Hiking Guide</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-white font-normal hover:text-white text-sm transition-colors"
+                    >Blog</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="text-lg font-normal text-white text-right">
+                Navigation
+              </h3>
+              <ul class="mt-4 space-y-3 text-right">
+                <li>
+                  <a
+                    href="#"
+                    class="text-white font-normal hover:text-white text-sm transition-colors"
+                    >About us</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-white font-normal hover:text-white text-sm transition-colors"
+                    >Recommendation</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-white font-normal hover:text-white text-sm transition-colors"
+                    >Categories</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-white font-normal hover:text-white text-sm transition-colors"
+                    >Activities</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="text-lg font-normal text-white text-right">License</h3>
+              <ul class="mt-4 space-y-3 text-right">
+                <li>
+                  <a
+                    href="#"
+                    class="text-white font-normal hover:text-white text-sm transition-colors"
+                    >Privacy Policy</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-white font-normal hover:text-white text-sm transition-colors"
+                    >Copyright</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-white font-normal hover:text-white text-sm transition-colors"
+                    >FAQs</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="text-lg font-normal text-white text-right">
+                Social Media
+              </h3>
+              <ul class="mt-4 space-y-3 text-right">
+                <li>
+                  <a
+                    href="#"
+                    class="text-white font-normal hover:text-white text-sm transition-colors"
+                    >Instagram</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-white font-normal hover:text-white text-sm transition-colors"
+                    >Facebook</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-white font-normal hover:text-white text-sm transition-colors"
+                    >Twitter</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-white font-normal hover:text-white text-sm transition-colors"
+                    >LinkedIn</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-sm"
+          >
+            <div>
+              <h3 class="text-2xl font-normal text-white">Contact Us</h3>
+            </div>
+            <div class="flex items-center gap-2 text-white">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-5 h-5 flex-shrink-0"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
+                />
+              </svg>
+              <span class="text-xs">(62) 233-4567-8910</span>
+            </div>
+            <div class="flex items-center gap-2 text-white">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-5 h-5 flex-shrink-0"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21.75 9v.906a2.25 2.25 0 0 1-1.183 1.981l-6.478 3.488M2.25 9v.906a2.25 2.25 0 0 0 1.183 1.981l6.478 3.488m8.839 2.51-4.66-2.51m0 0-1.023-.55a2.25 2.25 0 0 0-2.134 0l-1.022.55m0 0-4.661 2.51m16.5 1.615a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V8.844a2.25 2.25 0 0 1 1.183-1.981l7.5-4.039a2.25 2.25 0 0 1 2.134 0l7.5 4.039a2.25 2.25 0 0 1 1.183 1.98V19.5Z"
+                />
+              </svg>
+              <span class="text-xs">hello@AltitudeTrails.com</span>
+            </div>
+            <div class="flex items-start gap-2 text-white">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-5 h-5 flex-shrink-0 mt-0.5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+                />
+              </svg>
+              <span class="text-xs"
+                >Sumbergempol, Tulungagung, Jawa Timur, Indonesia</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="py-6 border-t border-white flex flex-col sm:flex-row justify-between items-center text-sm"
+        >
+          <span>
+            <img src="image/logo2.png" width="120" height="74" class="h-6" />
+          </span>
+
+          <div class="text-white text-center text-xs sm:text-right">
+            © 2025 AltitudeTrails | All rights reserved | Rediscover the great
+            outdoors with us | Created by Jopjop
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 
   <!-- Style punya 6-->
