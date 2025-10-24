@@ -1,4 +1,4 @@
-# 🏔️ AltitudeTrails - Web Layanan Panduan Pendakian
+# 🏔️ AltitudeTrails - Web Layanan Guide Hiking
 
 [![Lisensi: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Tumpukan Teknologi: HTML/Tailwind/JS](https://img.shields.io/badge/Tech%20Stack-HTML%20|%20Tailwind%20|%20JS-000000.svg)](README.md)
